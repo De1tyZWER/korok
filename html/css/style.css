@@ -1,0 +1,124 @@
+@import url('variable.css');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: var(--main);
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 7rem;
+}
+
+.logo {
+    width: 40%;
+    margin: 1rem;
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+}
+
+.logo img {
+    width: 67px;
+    border-radius: 5rem;
+}
+
+.links {
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    padding: 0.67rem;
+    background: rgb(222, 201, 162);
+    border-radius: 15px;
+}
+
+.links a:hover {
+    color: rgb(67, 67, 67);
+    transition: 0.67s;
+}
+
+.working {
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.working a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    padding: 0.67rem;
+    background: rgb(222, 201, 162);
+    border-radius: 15px;
+}
+
+.working a:hover {
+    color: rgb(67, 67, 67);
+    transition: 0.67s;
+}
+
+.info {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--main);
+}
+
+.info a {
+    margin: 1rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+}
+
+.burger {
+    display: none;
+    font-size: 5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+@media (max-width: 490px) {
+    .burger {display: block;}
+    .menu {
+        background: var(--main);
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .menu.open {
+        display: block;
+    }
+
+    .working,.links{
+        flex-direction: column;
+        width: 90%;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,25 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 98%;
+    padding: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,select {
+    width: 98%;
+}
+
+form button {
+    background: whitesmoke;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    border: 2rem;
+}

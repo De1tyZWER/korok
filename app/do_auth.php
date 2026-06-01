@@ -1,18 +1,25 @@
 <?php
 require_once('boot.php');
 
-$sql = "SELECT * FROM users WHERE username = :username AND password = :password";
+$username = $_POST['username'] ?? '';
+$password = $_POST['password'] ?? '';
+
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST')
+    die("лох");
+
+$sql = "SELECT * FROM users WHERE username = :username";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    'username' => $_POST["username"],
-    'password' => $_POST["password"],
+    'username' => $username
 ]);
 
 $user = $stmt->fetch();
 
-if ($user) {
+if ($user && password_verify($password, $user['password'])) {
     $_SESSION['user_id'] = $user['id'];
-    header('Location: ../index.php');
+    header('Location: /index.php');
+    exit();
 } else {
-    echo "Неверный логин или пароль! <a href='../auth.php'>Назад</a>";
+    echo "Неправильно набран логин или пароль";
 }

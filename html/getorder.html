@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КОРОЧКИ ЕСТЬ | ОТПРАВКА ЗАЯВКИ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="">
+                <h1>КОРОЧКИ ЕСТЬ</h1>
+            </div>
+
+            <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">=</button>
+
+            <div class="menu" id="menu">
+                <div class="links">
+                    <a href="index.html">Главная</a>
+                    <a href="about.html">О нас</a>
+                    <a href="myorder.html">Мои зявки</a>
+                    <a href="getorder.html">Отправить заявку</a>
+                </div>
+                <div class="working">
+                    <a href="auth.html">Войти</a>
+                    <a href="register.html">Зарегистироваться</a>
+                    <a href="admin.html">Админ</a>
+                    <a href="logout.html">Выйти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="auth">
+        <h1>ОФОРМЛЕНИЕ ЗАЯВКИ</h1>
+
+        <form action="">
+            <div>
+                <label for="">Курс</label>
+                <select name="" id="">
+                    <option value="">--- ВЫБЕРЕТЕ КУРС ---</option>
+                    <option value="">1с</option>
+                    <option value="">php</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Дата начала</label>
+                <input type="date">
+            </div>
+            <div>
+                <label for="">Тип оплаты</label>
+                <select name="" id="">
+                    <option value="">--- ВЫБЕРЕТЕ ТИП ОПЛАТЫ ---</option>
+                    <option value="">Наличные</option>
+                    <option value="">Перевод</option>
+                </select>
+            </div>
+
+            <button type="submit">Отправить заявку</button>
+        </form>
+        
+        <a href="myorder.html">Мои курсы</a>
+    </section>
+
+    <footer>
+        <div class="info">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="myorder.html">Мои зявки</a>
+            <a href="getorder.html">Отправить заявку</a>
+            <a href="auth.html">Войти</a>
+            <a href="register.html">Зарегистироваться</a>
+            <a href="admin.html">Админ</a>
+            <a href="logout.html">Выйти</a>
+        </div>
+    </footer>
+</body>
+
+</html>

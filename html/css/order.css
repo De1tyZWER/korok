@@ -1,0 +1,36 @@
+.information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 98%;
+    padding: 5px;
+}
+
+h1,
+tr,
+td,
+a {
+    font-size: 2rem;
+    padding: 6px;
+}
+
+thead {
+    background: wheat;
+}
+
+@media (max-width: 490px) {
+
+    tr,
+    td,
+    a {
+        font-size: 15px;
+        padding: 6px;
+    }
+
+    .tabletka {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}

@@ -1,13 +1,12 @@
 <?php
 
 session_start();
-
-$config = include __DIR__ . '/config.php';
+$cfg = include __DIR__ . '/config.php';
 
 $pdo = new PDO(
-    'mysql:host=' . $config['db_host'] . ';dbname=' . $config['db_name'],
-    $config['db_user'],
-    $config['db_pass']
+    'mysql:host=' . $cfg['db_host'] . ';dbname=' . $cfg['db_name'],
+    $cfg['db_user'],
+    $cfg['db_pass']
 );
 
-// $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

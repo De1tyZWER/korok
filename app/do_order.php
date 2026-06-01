@@ -1,20 +1,21 @@
 <?php
-
-session_start();
-
 require_once('boot.php');
 
-if (!isset($_SESSION['user_id'])) {
-    die("Ошибка: вы неавторизованы");
-}
+if (!$_SESSION['user_id'])
+    die("Авторизуйся, позорник");
 
-$sql = "INSERT INTO get_order (username, course, date, pay) VALUES (:uid, :course, :date, :pay)";
+if ($_SERVER['REQUEST_METHOD'] !== 'POST')
+    die("лох");
+
+$sql = "INSERT INTO get_order (username, cource, date, pay, status) VALUES (:uid, :cource, :date, :pay, :status)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     'uid' => $_SESSION['user_id'],
-    'course' => $_POST["course"],
-    'date' => $_POST["date"],
-    'pay' => $_POST["pay"],
+    'cource' => $_POST['cource'],
+    'date' => $_POST['date'],
+    'pay' => $_POST['pay'],
+    'status' => 'Новая'
 ]);
 
-header("location: ../myorder.php");
+header('Location: /myorder.php');
+exit();

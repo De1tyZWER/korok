@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КОРОЧКИ ЕСТЬ | ГЛАВНАЯ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="">
+                <h1>КОРОЧКИ ЕСТЬ</h1>
+            </div>
+
+            <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">=</button>
+
+            <div class="menu" id="menu">
+                <div class="links">
+                    <a href="index.html">Главная</a>
+                    <a href="about.html">О нас</a>
+                    <a href="myorder.html">Мои зявки</a>
+                    <a href="getorder.html">Отправить заявку</a>
+                </div>
+                <div class="working">
+                    <a href="auth.html">Войти</a>
+                    <a href="register.html">Зарегистироваться</a>
+                    <a href="admin.html">Админ</a>
+                    <a href="logout.html">Выйти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="information">
+        <h1>
+            1. Файл базы данных (дамп.sql)
+
+            Что исправлено: Исправлена критическая ошибка во внешнем ключе (Foreign Key) таблицы order_items. Поле
+            order_id теперь правильно ссылается на родительскую таблицу orders(id), а не на саму себя. Цена (price) в
+            таблице goods приведена к единому типу DECIMAL(10,2). Удалены скрытые пробелы, ломавшие импорт.
+
+            2. Админский файл функций (admin/functions.php)
+
+            Что исправлено: Переписана функция requireAdmin(). Исключение настроено строго для страницы login.php (чтобы
+            убрать бесконечную петлю редиректов). Сама проверка роли сделана безопасной через оператор ??
+            ($_SESSION['user']['role'] ?? 0), что полностью убрало варнинг Undefined array key "role".
+
+            3. Файл авторизации (admin/login.php)
+
+            Что исправлено: Запись успешного входа переведена с ключа $_SESSION['admin'] на единый стандарт
+            $_SESSION['user'], внутри которого сохраняется массив с ID, именем и ролью ('role' => (int)$user['role']).
+            Это подружило логику входа с логикой проверки прав на остальных страницах.
+
+            4. Файлы страниц админки (index.php, users.php и др.)
+
+            Что исправлено: На самые первые строчки файлов добавлена буферизация вывода ob_start(). Это защитило
+            отправку HTTP-заголовков (редиректов) от любых преждевременных выводов HTML-кода или случайных
+            предупреждений сервера (headers already sent).
+
+            Удачи в дальнейшей разработке CoffePoint! Ты отлично справился с отладкой.
+        </h1>
+    </section>
+
+    <footer>
+        <div class="info">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="myorder.html">Мои зявки</a>
+            <a href="getorder.html">Отправить заявку</a>
+            <a href="auth.html">Войти</a>
+            <a href="register.html">Зарегистироваться</a>
+            <a href="admin.html">Админ</a>
+            <a href="logout.html">Выйти</a>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/boot.php';
-
+require_once('boot.php');
 session_destroy();
-header("location: /");
+header("Location: /index.php");
+exit();

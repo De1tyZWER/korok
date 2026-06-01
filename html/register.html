@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КОРОЧКИ ЕСТЬ | РЕГИСТРАЦИЯ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="">
+                <h1>КОРОЧКИ ЕСТЬ</h1>
+            </div>
+
+            <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">=</button>
+
+            <div class="menu" id="menu">
+                <div class="links">
+                    <a href="index.html">Главная</a>
+                    <a href="about.html">О нас</a>
+                    <a href="myorder.html">Мои зявки</a>
+                    <a href="getorder.html">Отправить заявку</a>
+                    <a href="auth.html">Войти</a>
+                    <a href="register.html">Зарегистироваться</a>
+                    <a href="admin.html">Админ</a>
+                    <a href="logout.html">Выйти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="auth">
+        <h1>РЕГИСТРАЦИЯ</h1>
+
+        <form action="">
+            <div>
+                <label for="">Логин</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Пароль</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">ФИО</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">EMAIL</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Телефон</label>
+                <input type="text" id="phone" name="phone" placeholder="8(XXX)XXX-XX-XX" class="form-control">
+            </div>
+
+            <button type="submit">Зарегистироваться</button>
+        </form>
+
+        <p>Есть аккаунт?</p><a href="auth.html">Войти</a>
+    </section>
+
+    <footer>
+        <div class="info">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="myorder.html">Мои зявки</a>
+            <a href="getorder.html">Отправить заявку</a>
+            <a href="auth.html">Войти</a>
+            <a href="register.html">Зарегистироваться</a>
+            <a href="admin.html">Админ</a>
+            <a href="logout.html">Выйти</a>
+        </div>
+    </footer>
+
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.inputmask.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#phone").inputmask({"mask": "8(999)999-99-99"})
+        });
+    </script>
+</body>
+
+</html>
